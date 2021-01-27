@@ -1,0 +1,11 @@
+Library app Features list(wishlist);  
+
+1. Should be fully responsive for all screen sizes 
+
+2. Should allow user to input a book, from anywhere on screen(with a + button or something) 
+
+3. HAS  to look professional 
+
+4. should search the intenet for Book thumbnail and description 
+
+5. Dark mode.
