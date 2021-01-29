@@ -14,7 +14,7 @@ html {
 }
 
 .container {
-  max-width: 568px;
+  max-width: 828px;
   width: 92%;
   margin: 62px auto;
 }
@@ -58,6 +58,7 @@ header h1 {
   outline: none;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .btn:focus {
@@ -90,11 +91,46 @@ header h1 {
   padding: 30px 0;
   display: flex;
   align-items: flex-start;
+  margin-right: 30px;
   justify-content: space-between;
+}
+.book * {
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 768px) {
+  .forms {
+    display: flex;
+    align-items: center;
+  }
+  .form {
+    min-width: 260px;
+    margin-right: 20px;
+  }
+
   .sub-header p {
     margin-right: 20%;
+  }
+  .book {
+    display: block;
+    width: 100%;
+  }
+  .book * {
+    display: inline-block;
+  }
+  .book p {
+    min-width: 200px;
+  }
+
+  .book button {
+    margin-left: 40px;
+  }
+  .submit_btn {
+    position: absolute;
+    top: 225px;
+  }
+
+  .sub-header {
+    margin-top: 70px;
   }
 }
