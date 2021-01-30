@@ -2,10 +2,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
   --red: #d52941;
   --dark: #2b303a;
   --green: #25d2bf;
   --grey: #585858;
+}
+
+.dark-mode {
+  background-color: var(--dark);
+  color: white;
 }
 
 html {
@@ -17,6 +25,13 @@ html {
   max-width: 828px;
   width: 92%;
   margin: 62px auto;
+}
+.logo-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-direction: column;
 }
 
 header h1 {
@@ -70,9 +85,16 @@ header h1 {
 }
 .delete_btn {
   background-color: var(--red);
+  transition: all 0.2s ease-in-out;
 }
+
 .read_btn {
   background-color: var(--grey);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.read_btn:hover {
+  background-color: var(--green);
 }
 
 .sub-header {
@@ -99,9 +121,17 @@ header h1 {
 }
 
 @media screen and (min-width: 768px) {
+  header h1 {
+    margin-bottom: 0px;
+  }
+
+  .logo-container {
+    flex-direction: row;
+  }
   .forms {
     display: flex;
     align-items: center;
+    position: relative;
   }
   .form {
     min-width: 260px;
@@ -127,7 +157,7 @@ header h1 {
   }
   .submit_btn {
     position: absolute;
-    top: 225px;
+    top: 70px;
   }
 
   .sub-header {
