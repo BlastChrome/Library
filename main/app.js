@@ -15,6 +15,7 @@ function Book(title,author,publishingDate){
     this.title = title; 
     this.author = author; 
     this.publishingDate = publishingDate;   
+    this.read  = false;
 
 }  
 
@@ -88,14 +89,27 @@ function resetForm(){
 
 }
 
+function hasRead(btn){
+    let bookTitle = btn.parentNode.firstChild.innerText;     
+    myLibrary.forEach(book =>{
+        if(book.title == bookTitle){   
+            btn.classList.toggle("hasRead");
+            book.read = !book.read;  
+            console.log(book.read);
+        }
+    })
+}
 
 
-submit_btn.addEventListener('click',() =>{
+
+submit_btn.addEventListener('click',() =>{ 
     let title = title_form.value;   
     let author = author_form.value; 
-    let publish = publish_form.value;     
+    let publish = publish_form.value;   
+
     if(checkInput(title,author,publish)) return;
     if((hasBook(title,author))) return ;
+
     let book = new Book(title,author,publish); 
     book.addBookToLibraryArray(); 
     book.addBookToDisplay();  
@@ -103,15 +117,15 @@ submit_btn.addEventListener('click',() =>{
 })   
 dark_btn.addEventListener('click', () =>{
     doc_body.classList.toggle("dark-mode");
-})
 
+})
 bookDisplay.addEventListener('click', (e) =>{
     e.stopPropagation();
     if(e.target && e.target.classList == "btn delete_btn"){
-       deleteBook(e.target);
+       deleteBook(e.target); 
     } 
-    else if(e.target && e.target.classList == "btn read_btn"){
-       console.log("pressed the read btn");
+    if(e.target && e.target.classList == "btn read_btn" || e.target && e.target.classList == "btn read_btn hasRead" ){
+      hasRead(e.target); 
     } 
 })
 
@@ -119,10 +133,10 @@ bookDisplay.addEventListener('click', (e) =>{
 let book1 = new Book("Naruto", "Musashi Kishimoto", "1999"); 
 let book2 = new Book("Hunter x Hunter", "Yoshihiro Togashi", "1999"); 
 
-book1.addBookToLibraryArray();
-book1.addBookToDisplay();
 book2.addBookToLibraryArray(); 
 book2.addBookToDisplay();
+book1.addBookToLibraryArray();
+book1.addBookToDisplay();
 
 
 

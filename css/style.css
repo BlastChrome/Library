@@ -7,8 +7,14 @@
 :root {
   --red: #d52941;
   --dark: #2b303a;
-  --green: #25d2bf;
+  /* --green: #25d2be;  */
+  --green: #29c2b0;
+  --purp: #9e29c2;
   --grey: #585858;
+}
+
+.overlay-form {
+  display: none;
 }
 
 .dark-mode {
@@ -93,8 +99,8 @@ header h1 {
   transition: background-color 0.2s ease-in-out;
 }
 
-.read_btn:hover {
-  background-color: var(--green);
+.hasRead {
+  background-color: var(--purp);
 }
 
 .sub-header {
@@ -115,6 +121,7 @@ header h1 {
   align-items: flex-start;
   margin-right: 30px;
   justify-content: space-between;
+  width: 100%;
 }
 .book * {
   margin-right: 10px;
@@ -157,7 +164,7 @@ header h1 {
   }
   .submit_btn {
     position: absolute;
-    top: 70px;
+    top: 80px;
   }
 
   .sub-header {
