@@ -7,7 +7,6 @@
 :root {
   --red: #d52941;
   --dark: #2b303a;
-  /* --green: #25d2be;  */
   --green: #29c2b0;
   --purp: #9e29c2;
   --grey: #585858;
@@ -16,7 +15,16 @@
 .overlay-form {
   display: none;
 }
-
+.overlay_btn {
+  position: fixed;
+  top: 90%;
+  left: 80%;
+  transform: scale(0.75);
+  filter: drop-shadow(5px 8px 4px rgba(110, 110, 110, 0.25));
+  background-color: white;
+  border-radius: 100%;
+  border: none;
+}
 .dark-mode {
   background-color: var(--dark);
   color: white;
@@ -31,6 +39,7 @@ html {
   max-width: 828px;
   width: 92%;
   margin: 62px auto;
+  position: relative;
 }
 .logo-container {
   display: flex;
@@ -128,6 +137,13 @@ header h1 {
 }
 
 @media screen and (min-width: 768px) {
+  .overlay_btn {
+    position: fixed;
+    top: 88%;
+    left: 75%;
+    transform: scale(1);
+  }
+
   header h1 {
     margin-bottom: 0px;
   }
