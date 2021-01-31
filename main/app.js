@@ -8,7 +8,8 @@ const publish_form = document.querySelector(".publish_form");
 const submit_btn = document.querySelector(".submit_btn");  
 const dark_btn = document.querySelector(".dark_btn"); 
 const overlay_btn = document.querySelector(".overlay_btn"); 
-// const overlay_content = document.querySelector(".overlay-text-container");
+// const overlay_content = document.querySelector(".overlay-text-container"); 
+const overlay_submit_btn = document.querySelector(".overlay_submit");
 const overlay_bg = document.querySelector(".overlay-form");
  
 const doc_body = document.querySelector("body"); 
@@ -87,7 +88,11 @@ function resetForm(){
     
     title.value = ''; 
     author.value = ''; 
-    publish.value = '';
+    publish.value = ''; 
+
+    document.querySelector(".overlay_title").value = '';   
+    document.querySelector(".overlay_author").value = ''; 
+    document.querySelector(".overlay_date").value = '';   
 
 }
 
@@ -124,8 +129,26 @@ submit_btn.addEventListener('click',() =>{
     let book = new Book(title,author,publish); 
     book.addBookToLibraryArray(); 
     book.addBookToDisplay();  
-    resetForm();
-})   
+    resetForm(); 
+    
+}) 
+
+overlay_submit_btn.addEventListener('click',() =>{ 
+    let title = document.querySelector(".overlay_title").value;   
+    let author = document.querySelector(".overlay_author").value; 
+    let publish = document.querySelector(".overlay_date").value;   
+
+    if(checkInput(title,author,publish)) return;
+    if((hasBook(title,author))) return ;
+
+    let book = new Book(title,author,publish); 
+    book.addBookToLibraryArray(); 
+    book.addBookToDisplay();  
+    resetForm(); 
+    overlayDisplayOff();
+})  
+
+
 dark_btn.addEventListener('click', () =>{
     doc_body.classList.toggle("dark-mode");
 })
