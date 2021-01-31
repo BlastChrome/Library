@@ -4,8 +4,12 @@ let myLibrary = [];
 const title_form = document.querySelector(".form_input");  
 const author_form = document.querySelector(".author_form");
 const publish_form = document.querySelector(".publish_form"); 
+
 const submit_btn = document.querySelector(".submit_btn");  
 const dark_btn = document.querySelector(".dark_btn"); 
+const overlay_btn = document.querySelector(".overlay_btn"); 
+const overlay_content = document.querySelector(".overlay-text-container");
+ 
 const doc_body = document.querySelector("body"); 
 
 
@@ -100,6 +104,16 @@ function hasRead(btn){
     })
 }
 
+function overlayDisplayOn(){
+    let overlay = document.querySelector(".overlay-form") 
+    overlay.classList.toggle("hide");
+}
+
+function overlayDisplayOff(){
+    let overlay = document.querySelector(".overlay-form") 
+    overlay.classList.toggle("hide");
+}
+
 
 
 submit_btn.addEventListener('click',() =>{ 
@@ -117,8 +131,16 @@ submit_btn.addEventListener('click',() =>{
 })   
 dark_btn.addEventListener('click', () =>{
     doc_body.classList.toggle("dark-mode");
-
 })
+
+overlay_btn.addEventListener('click', () => {
+    overlayDisplayOn();
+})
+
+overlay_content.addEventListener('click',() =>{
+    overlayDisplayOff()
+})
+
 bookDisplay.addEventListener('click', (e) =>{
     e.stopPropagation();
     if(e.target && e.target.classList == "btn delete_btn"){
