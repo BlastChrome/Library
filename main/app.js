@@ -27,7 +27,6 @@ Book.prototype.addBookToLibraryArray = function(){
     myLibrary.push(this);
 } 
 
-
 Book.prototype.addBookToDisplay = function(){ 
     var bookContainer = document.createElement("div");  
 
@@ -55,7 +54,6 @@ Book.prototype.addBookToDisplay = function(){
 
 }  
 
-
  function hasBook(title, author){
      let hasBook = false;
     myLibrary.forEach(book => {
@@ -73,7 +71,6 @@ function checkInput(title, author, publish){
 
 function deleteBook(btn){
     let bookTitle = btn.parentNode.firstChild.innerText;  
-
     myLibrary.forEach((book, index) =>{
         if(book.title == bookTitle){
             myLibrary.splice(index,1); 

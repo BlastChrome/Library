@@ -108,7 +108,7 @@ header h1 {
 
 .btn {
   color: white;
-  padding: 8px 20px;
+  padding: 5px 15px;
   font-size: 16px;
   outline: none;
   border: none;
@@ -151,14 +151,16 @@ header h1 {
 .book {
   border-bottom: 1px solid rgba(128, 128, 128, 0.61);
   padding: 30px 0;
+
   display: flex;
   align-items: flex-start;
   margin-right: 30px;
   justify-content: space-between;
+
   width: 100%;
 }
 .book * {
-  margin-right: 10px;
+  max-width: 70px;
 }
 
 @media screen and (min-width: 768px) {
@@ -195,6 +197,7 @@ header h1 {
   }
   .book * {
     display: inline-block;
+    max-width: 100%;
   }
   .book p {
     min-width: 200px;
@@ -210,5 +213,8 @@ header h1 {
 
   .sub-header {
     margin-top: 70px;
+  }
+  .btn {
+    padding: 7px 20px;
   }
 }
