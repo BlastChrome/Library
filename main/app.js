@@ -8,7 +8,8 @@ const publish_form = document.querySelector(".publish_form");
 const submit_btn = document.querySelector(".submit_btn");  
 const dark_btn = document.querySelector(".dark_btn"); 
 const overlay_btn = document.querySelector(".overlay_btn"); 
-const overlay_content = document.querySelector(".overlay-text-container");
+// const overlay_content = document.querySelector(".overlay-text-container");
+const overlay_bg = document.querySelector(".overlay-form");
  
 const doc_body = document.querySelector("body"); 
 
@@ -96,19 +97,18 @@ function hasRead(btn){
         if(book.title == bookTitle){   
             btn.classList.toggle("hasRead");
             book.read = !book.read;  
-            console.log(book.read);
         }
     })
 }
 
 function overlayDisplayOn(){
     let overlay = document.querySelector(".overlay-form") 
-    overlay.classList.toggle("hide");
+    overlay.style.display = "block";
 }
 
 function overlayDisplayOff(){
     let overlay = document.querySelector(".overlay-form") 
-    overlay.classList.toggle("hide");
+    overlay.style.display = "none";
 }
 
 
@@ -130,13 +130,14 @@ dark_btn.addEventListener('click', () =>{
     doc_body.classList.toggle("dark-mode");
 })
 
-overlay_btn.addEventListener('click', () => {
-    overlayDisplayOn();
-})
+overlay_btn.addEventListener('click', overlayDisplayOn);
 
-overlay_content.addEventListener('click',() =>{
-    overlayDisplayOff()
-})
+overlay_bg.addEventListener('click',e =>{
+    e.stopPropagation() 
+    if(e.target && e.target.classList == "overlay overlay-form"){
+       overlayDisplayOff();
+    }
+});
 
 bookDisplay.addEventListener('click', (e) =>{
     e.stopPropagation();

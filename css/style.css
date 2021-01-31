@@ -11,12 +11,10 @@
   --purp: #9e29c2;
   --grey: #585858;
 }
-.hide {
-  display: none;
-}
 
 .overlay-form {
   position: fixed; /* Sit on top of the page content */
+  display: none;
   /*Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
@@ -25,7 +23,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 .overlay-text-container {
@@ -34,8 +32,12 @@
   left: 50%;
   font-size: 50px;
   color: white;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   -ms-transform: translate(-50%, -50%);
+  background-color: var(--grey);
+  padding: 40px 30px;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .overlay_btn {
@@ -48,6 +50,10 @@
   border-radius: 100px;
   border: none;
   cursor: pointer;
+}
+
+.overlay_submit {
+  background-color: var(--green);
 }
 
 .dark-mode {
