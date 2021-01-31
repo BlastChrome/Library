@@ -40,7 +40,7 @@
 
 .overlay_btn {
   position: fixed;
-  top: 90%;
+  top: 87%;
   left: 80%;
   transform: scale(0.7);
   filter: drop-shadow(5px 8px 4px rgba(110, 110, 110, 0.25));
@@ -160,7 +160,11 @@ header h1 {
   width: 100%;
 }
 .book * {
-  max-width: 70px;
+  max-width: 80px;
+}
+
+.book p {
+  overflow-wrap: break-word;
 }
 
 @media screen and (min-width: 768px) {
